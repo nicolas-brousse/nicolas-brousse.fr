@@ -1,0 +1,227 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+i.icn {
+  display: inline-block;
+  width: 42px;
+  height: 42px;
+  background-image: url(../img/icn.png);
+  background-size: 42px 208px;
+
+  &.github {
+    background-position: 0px -111px;
+  }
+
+  &.linkedin {
+    background-position: 0px -56px;
+  }
+
+  &.email {
+    background-position: 0px -166px;
+  }
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: "Montserrat";
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 2px;
+  background-image: #b9bec2;
+}
+
+#wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#background {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 0;
+
+  .layer {
+    width: 110%;
+    height: 110%;
+    margin-left: -5%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+  }
+
+  .sky {
+    height: 75%;
+    background-image: url(../img/parallax/sky.png);
+    background-size: cover;
+  }
+
+  .mountain {
+    background-image: url(../img/parallax/mountain.png);
+    background-size: cover;
+  }
+
+  .cloud {
+    width: 75%;
+    top: 50% !important;
+    background-image: url(../img/parallax/cloud.png);
+    background-size: contain;
+  }
+}
+
+#container, #container .layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#container {
+  opacity: 0;
+  transition: opacity 1500ms, transform 1000ms;
+  -webkit-transition: opacity 1500ms, transform 1000ms;
+  -webkit-transition: opacity 1500ms, -webkit-transform 1000ms;
+  -moz-transition: opacity 1500ms, transform 1000ms;
+  -ms-transition: opacity 1500ms, transform 1000ms;
+  -o-transition: opacity 1500ms, transform 1000ms;
+  transform: scale(0.95);
+
+  &.show {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+#top {
+  width: 300px;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  margin: auto;
+  text-align: justify;
+  text-transform: uppercase;
+  opacity: 0.5;
+  transition: opacity 250ms;
+  -webkit-transition: opacity 250ms;
+  -moz-transition: opacity 250ms;
+  -ms-transition: opacity 250ms;
+  -o-transition: opacity 250ms;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+#left {
+  width: 0px;
+  height: 16px;
+  position: absolute;
+  top: 0;
+  left: 30px;
+  bottom: 0;
+  z-index: 1;
+  margin: auto;
+  text-align: center;
+  text-transform: uppercase;
+  opacity: 0.5;
+  transition: opacity 250ms;
+  -webkit-transition: opacity 250ms;
+  -moz-transition: opacity 250ms;
+  -ms-transition: opacity 250ms;
+  -o-transition: opacity 250ms;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  span {
+    display: inline-block;
+    width: 230px;
+    position: absolute;
+    transform: rotate(-90deg) translateY(-115px);
+    -webkit-transform: rotate(-90deg) translateY(-115px);
+    -moz-transform: rotate(-90deg) translateY(-115px);
+    -ms-transform: rotate(-90deg) translateY(-115px);
+    -o-transform: rotate(-90deg) translateY(-115px);
+  }
+}
+
+#top, #left {
+  cursor: default;
+}
+
+#logo {
+  width: 302px;
+  height: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  margin: auto;
+  background-image: url(../img/logo.png);
+  background-size: 302px 200px;
+}
+
+#social {
+  height: 208px;
+  position: absolute;
+  top: 0;
+  right: 30px;
+  bottom: 0;
+  z-index: 1;
+  margin: auto;
+  padding: 0;
+
+  a, li {
+    width: 43px;
+    height: 43px;
+  }
+
+  a {
+    display: inline-block;
+  }
+
+  li {
+    margin-top: 12px;
+    opacity: 0.5;
+    list-style: none;
+    transition: opacity 250ms;
+    -webkit-transition: opacity 250ms;
+    -moz-transition: opacity 250ms;
+    -ms-transition: opacity 250ms;
+    -o-transition: opacity 250ms;
+  }
+
+  li:first-child {
+    margin-top: 0;
+  }
+
+  li:hover {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-height: 450px) {
+  #background .sky {
+    height: 110%;
+  }
+}
